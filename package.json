@@ -1,0 +1,32 @@
+{
+  "name": "fg-study.learn-rxjs",
+  "version": "1.0.0",
+  "description": "A basic set of examples for RxJS study based on 'A Comprehensive RxJS Tutorial' from coursetro.com - https://coursetro.com/courses/25/A-Comprehensive-RxJS-Tutorial---Learn-ReactiveX-for-JavaScript-",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node --project ./tsconfig.json ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladimirioan82/fg-study.learn-rxjs.git"
+  },
+  "keywords": [
+    "study",
+    "learn",
+    "reactive",
+    "reactivex",
+    "javascript",
+    "typescript",
+    "rxjs"
+  ],
+  "author": "Vladimir-Ioan Văraru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladimirioan82/fg-study.learn-rxjs/issues"
+  },
+  "homepage": "https://github.com/vladimirioan82/fg-study.learn-rxjs#readme",
+  "dependencies": {
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6"
+  }
+}
