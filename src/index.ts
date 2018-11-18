@@ -1,4 +1,5 @@
 import { someUtilities } from "./app/some-utilities";
+import { MutableImmutable } from "./app/mutable-immutable";
 
 let option: number = -1;
 
@@ -15,7 +16,9 @@ while (option) {
     case 1:
       someUtilities.clearConsole();
       console.log('01 - Mutable and Immutable objects in Javascript');
-      // HERE COMES YOUR CODE
+
+      MutableImmutable.spreadOperator((values: Array<any>) => console.log(values));
+
       someUtilities.line();
       someUtilities.stringFromConsole('Press EMTER...');
       break;

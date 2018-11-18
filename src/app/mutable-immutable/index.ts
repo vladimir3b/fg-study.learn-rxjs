@@ -59,8 +59,9 @@ export class MutableImmutable {
   }
 
 
-  public static spreadOperator(): void {
+  public static spreadOperator(callback: (...message: Array<any>) => void): void {
 
+    this.initialize();
     console.log('Using spreading operator to create immutable objects ---------------------------');
     console.log('person = ', this.person);
     this.person1.firstName = 'Jane';
