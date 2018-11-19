@@ -1,5 +1,7 @@
 import { IPerson, IPersonExtended } from "../../models/person.interface";
 import { PersonExtended } from "../../models/person.model";
+import { someUtilities } from "../some-utilities";
+
 
 export class MutableImmutable {
 
@@ -62,18 +64,58 @@ export class MutableImmutable {
   public static spreadOperator(callback: (...message: Array<any>) => void): void {
 
     this.initialize();
-    console.log('Using spreading operator to create immutable objects ---------------------------');
+    someUtilities.freeLines(2);
+    console.log('a. Using spreading operator to create immutable objects:');
+    someUtilities.freeLines(1);
+    console.log('Objects person, person1 and person2 have similar content:');
     console.log('person = ', this.person);
+    console.log('person1 = ', this.person1);
+    console.log('person2 = ', this.person2);
+    someUtilities.freeLines(1);
+    console.log('If we mutate person1, person will be mutated too, but person2 won\'t.');
     this.person1.firstName = 'Jane';
     this.person1.gender = 'female'; // person1 will refer person so, changing person1, will mutate person
     console.log('person = ', this.person);
+    console.log('person1 = ', this.person1);
     console.log('person2 = ', this.person2);
+    someUtilities.freeLines(1);
+    console.log('If we mutate person2, person and person1 won\'t be mutated.');
     this.person2.firstName = 'Miriam';
     this.person2.lastName = 'Moses';
     this.person2.gender = 'female'; // person2 won't refer person so, changing person2, won't mutate person
     console.log('person = ', this.person);
+    console.log('person1 = ', this.person1);
     console.log('person2 = ', this.person2);
-
+    someUtilities.enterAndClean();
+    // ------------------------------------------------------------------------
+    console.log('b. Using spreading operator to create immutable arrays:');
+    someUtilities.freeLines(1);
+    console.log('Arrays vector, vector1 and vector2 have the similar content:');
+    console.log('vector = ', this.vector);
+    console.log('vector1 = ', this.vector1);
+    console.log('vector2 = ', this.vector2);
+    someUtilities.freeLines(1);
+    console.log('By changing vector1, we will also mutate vector, array vector2 won\'t be mutated');
+    this.vector1[1] = 'Cristian';
+    this.vector1[2] = 'Ionita';
+    this.vector1[3] = 'Damigeana';
+    console.log('vector = ', this.vector);
+    console.log('vector1 = ', this.vector1);
+    console.log('vector2 = ', this.vector2);
+    someUtilities.freeLines(1);
+    console.log('By changing vector2, we won\'t mutate vector and vector1.');
+    this.vector2[0] = 'Iron Maiden';
+    this.vector2[4] = 'Slayer';
+    this.vector2[5] = 'Metallica';
+    console.log('vector = ', this.vector);
+    console.log('vector1 = ', this.vector1);
+    console.log('vector2 = ', this.vector2);
+    // ------------------------------------------------------------------------
+    console.log('c. Using spreading operator on objects created from a class:');
+    someUtilities.freeLines(1);
+    console.log('personExtended = ', this.personExtended);
+    console.log('personExtended1 = ', this.personExtended1);
+    console.log('personExtended2 = ', this.personExtended2);
   }
 
 };

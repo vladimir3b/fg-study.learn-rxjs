@@ -3,6 +3,7 @@ import { MutableImmutable } from "./app/mutable-immutable";
 
 let option: number = -1;
 
+
 while (option) {
   someUtilities.clearConsole();
   console.log('(1) - Mutable and Immutable objects in Javascript');
@@ -19,15 +20,15 @@ while (option) {
 
       MutableImmutable.spreadOperator((values: Array<any>) => console.log(values));
 
-      someUtilities.line();
-      someUtilities.stringFromConsole('Press EMTER...');
+      someUtilities.horizontalLine();
+      someUtilities.pressEnter();
       break;
     case 2:
       someUtilities.clearConsole();
       console.log('02 - Observables');
       // HERE COMES YOUR CODE
-      someUtilities.line();
-      someUtilities.stringFromConsole('Press EMTER...');
+      someUtilities.horizontalLine();
+      someUtilities.pressEnter();
       break;
   }
 }

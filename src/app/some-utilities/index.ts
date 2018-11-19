@@ -1,5 +1,6 @@
 import * as readLineSync from 'readline-sync';
 
+
 export class someUtilities {
 
   public static clearConsole(): void {
@@ -7,8 +8,24 @@ export class someUtilities {
     // or process.stdout.write('\x1bc');
   }
 
-  public static line(n: number = 55): void {
+  public static horizontalLine(n: number = 55): void {
     console.log('-'.repeat(n));
+  }
+
+  public static freeLines(n: number = 1): void {
+    for (let i: number = 1; i <= n; i++) {
+      console.log('');
+    }
+  }
+
+  public static pressEnter() {
+    this.stringFromConsole('Press ENTER...');
+  }
+
+  public static enterAndClean() {
+    this.freeLines();
+    this.pressEnter();
+    this.clearConsole();
   }
 
   public static numberFromConsole(message: string, min?: number, max?: number): number {
